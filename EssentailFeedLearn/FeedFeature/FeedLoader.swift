@@ -15,3 +15,4 @@ enum LoadFeedResutt {
 protocol FeedLoader {
     func load(completion: @escaping (LoadFeedResutt) -> Void)
 }
+
