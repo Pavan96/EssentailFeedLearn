@@ -22,6 +22,7 @@ public final class RemoetFeedLoader {
     
     public func load() {
         client.get(from: url)
+
     }
 }
 
