@@ -14,7 +14,6 @@
 		9CA6E5E6287455BF003403EC /* FeedItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E5E5287455BF003403EC /* FeedItemMapper.swift */; };
 		9CD383372850D45700A4B5ED /* EssentailFeedLearn.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9CD383362850D45700A4B5ED /* EssentailFeedLearn.docc */; };
 		9CD3833D2850D45700A4B5ED /* EssentailFeedLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD383322850D45700A4B5ED /* EssentailFeedLearn.framework */; };
-		9CD383422850D45700A4B5ED /* EssentailFeedLearnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD383412850D45700A4B5ED /* EssentailFeedLearnTests.swift */; };
 		9CD383432850D45700A4B5ED /* EssentailFeedLearn.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD383352850D45700A4B5ED /* EssentailFeedLearn.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CD3834D2850D46B00A4B5ED /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3834C2850D46B00A4B5ED /* FeedItem.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		9CD383352850D45700A4B5ED /* EssentailFeedLearn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentailFeedLearn.h; sourceTree = "<group>"; };
 		9CD383362850D45700A4B5ED /* EssentailFeedLearn.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentailFeedLearn.docc; sourceTree = "<group>"; };
 		9CD3833C2850D45700A4B5ED /* EssentailFeedLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentailFeedLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CD383412850D45700A4B5ED /* EssentailFeedLearnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentailFeedLearnTests.swift; sourceTree = "<group>"; };
 		9CD3834C2850D46B00A4B5ED /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +111,6 @@
 		9CD383402850D45700A4B5ED /* EssentailFeedLearnTests */ = {
 			isa = PBXGroup;
 			children = (
-				9CD383412850D45700A4B5ED /* EssentailFeedLearnTests.swift */,
 				9C27D3F62851D10F001B0B66 /* RemoteFeedLoaderTest.swift */,
 			);
 			path = EssentailFeedLearnTests;
@@ -242,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C27D3F72851D10F001B0B66 /* RemoteFeedLoaderTest.swift in Sources */,
-				9CD383422850D45700A4B5ED /* EssentailFeedLearnTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
