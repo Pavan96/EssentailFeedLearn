@@ -15,7 +15,7 @@ public final class RemoetFeedLoader: FeedLoader {
         case connectivity
         case invalidData
     }
-    public typealias Result = LoadFeedResult<Error>
+    public typealias Result = LoadFeedResult
    
     public init(client: HTTPClient, url: URL) {
         self.client = client
@@ -33,7 +33,7 @@ public final class RemoetFeedLoader: FeedLoader {
                 completion(FeedItemMapper.map(data, from: response))
                 
             case .failure:
-                completion(.failure(.connectivity))
+                completion(.failure(Error.connectivity))
             }
         }
     }
