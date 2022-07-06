@@ -15,12 +15,8 @@ public final class RemoetFeedLoader {
         case connectivity
         case invalidData
     }
-    
-    public enum Result: Equatable {
-        case success([FeedItem])
-        case failure(Error)
-    }
-    
+    public typealias Result = LoadFeedResult<Error>
+   
     public init(client: HTTPClient, url: URL) {
         self.client = client
         self.url = url
