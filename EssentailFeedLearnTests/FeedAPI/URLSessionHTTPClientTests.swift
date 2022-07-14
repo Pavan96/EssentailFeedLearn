@@ -32,7 +32,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         URLProtocolStub.startInterceptingRequests()
         let url = URL(string: "htpp://a-url.com")!
         let error = NSError(domain: "any error", code: 1)
-        URLProtocolStub.stub(url: url, error: error)
+        URLProtocolStub.stub(url: url, data: nil, respone: nil, error: error)
         
         let sut = URLSessionHTTPClient()
 
@@ -60,11 +60,13 @@ class URLSessionHTTPClientTests: XCTestCase {
         private static var stubs = [URL: Stub]()
         
         private struct Stub {
+            let data: Data?
+            let response: URLResponse?
             let error: Error?
         }
         
-        static func stub(url: URL, error: Error? = nil) {
-            stubs[url] = Stub(error: error)
+        static func stub(url: URL, data: Data? , respone: URLResponse?, error: Error?) {
+            stubs[url] = Stub(data: data, response: respone, error: error)
         }
         
         static func startInterceptingRequests() {
@@ -96,6 +98,13 @@ class URLSessionHTTPClientTests: XCTestCase {
                 client?.urlProtocol(self, didFailWithError: erorr)
             }
             
+            if let data = stub.data {
+                client?.urlProtocol(self, didLoad: data)
+            }
+            
+            if let response = stub.response {
+                client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+            }
             client?.urlProtocolDidFinishLoading(self)
         }
         
