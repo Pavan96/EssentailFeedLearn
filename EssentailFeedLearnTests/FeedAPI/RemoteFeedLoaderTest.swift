@@ -121,7 +121,6 @@ class RemoteFeedLoaderTest: XCTestCase {
     }
     
     
-    
     // Factory method to create the item
     private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedItem, json: [String: Any]){
         let item = FeedItem(id: id, location: location, description: description, imageURL: imageURL)
