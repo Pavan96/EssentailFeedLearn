@@ -11,7 +11,6 @@ import EssentailFeedLearn
 class EssentailFeedAPIEndToEndTests: XCTestCase {
 
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
-
         switch getFeedResult() {
             case let .success(items)?:
                 XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
@@ -93,5 +92,4 @@ class EssentailFeedAPIEndToEndTests: XCTestCase {
     private func imageURL(at index: Int) -> URL {
         return URL(string: "https://url-\(index+1).com")!
     }
-
 }
