@@ -35,6 +35,7 @@ internal final class FeedItemMapper {
               let root =  try? JSONDecoder().decode(Root.self, from: data) else {
             return .failure(RemoetFeedLoader.Error.invalidData)
         }
+        print("JSON \(root.feed)")
         return .success(root.feed)
     }
 }
