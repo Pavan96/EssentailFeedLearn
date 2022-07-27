@@ -9,7 +9,6 @@ import XCTest
 import EssentailFeedLearn
 
 class URLSessionHTTPClientTests: XCTestCase {
-    
     override func setUp() {
         super.setUp()
         URLProtocolStub.startInterceptingRequests()
@@ -44,7 +43,6 @@ class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedError?.code, requestError.code)
     }
     
-   
     func test_getFromURL_failsonAllInvalidRepresentationClases() {
         XCTAssertNotNil(resultError(data: nil, response: nil, error: nil))
         XCTAssertNotNil(resultError(data: nil, response: nonHTTPURLResponse(), error: nil))
@@ -66,7 +64,6 @@ class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedValues?.data, data)
         XCTAssertEqual(receivedValues?.response.url, response.url)
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
-       
     }
     
     func test_getFromURL_succeedsWithEmptyDataOnHTTPURLResponseWithNilData() {
@@ -81,6 +78,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
         let sut = URLSessionHTTPClient()
         trackMemoryLeak(sut, file: file, line: line)
@@ -95,7 +93,7 @@ class URLSessionHTTPClientTests: XCTestCase {
             return (data, response)
             
         default:
-            XCTFail("Expected success , got \(String(describing: result)) instead", file: file, line: line)
+            XCTFail("Expected success, got \(String(describing: result)) instead", file: file, line: line)
             return nil
         }
     }
@@ -107,7 +105,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         case let .failure(error):
             return error
         default:
-            XCTFail("Expected failure , got \(String(describing: result)) instead", file: file, line: line)
+            XCTFail("Expected failure, got \(String(describing: result)) instead", file: file, line: line)
             return nil
         }
     }
